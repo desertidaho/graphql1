@@ -4,11 +4,17 @@ var { buildSchema } = require('graphql');
 
 var schema = buildSchema(`
   type Query {
-    name: String
+    name: String,
+    available: Boolean,
+    price: Float
   }
 `);
 
-var root = { name: () => 'Hi, my name is Brett Wilcox, what is your name?' };
+var root = { 
+  name: () => 'Can-Am Maverick X3 Max X RS Turbo RR Desert Tan', 
+  available: () => true, 
+  price: () => 31000
+};
 
 var app = express();
 app.use('/graphql', graphqlHTTP({

@@ -8,7 +8,7 @@ var schema = buildSchema(`
   }
 `);
 
-var root = { name: () => 'Hi, my name is Brett, what is your name?' };
+var root = { name: () => 'Hi, my name is Brett Wilcox, what is your name?' };
 
 var app = express();
 app.use('/graphql', graphqlHTTP({
